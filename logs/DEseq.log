@@ -103,13 +103,13 @@ The following objects are masked from 'package:base':
     intersect, setdiff, setequal, union
 
 1 2 3 4 5 6 
-                     [,1]         [,2]      [,3]      [,4]      [,5]      [,6]
-CIMG_000001-T1   2.000000 3.000000e+00  14.00000  21.00000  14.00000 18.000000
-CIMG_000002-T1  38.000000 1.060000e+02   2.00000   4.00000   8.00000  9.000000
-CIMG_000003-T1  48.000000 1.150000e+02 101.00000 160.00000 115.00000 72.000000
-CIMG_000004-T1  22.971059 1.428009e+02  33.79362  83.50121  28.60695 32.707970
-CIMG_000004-T2 128.871767 2.730426e+02  21.75345  40.26564  29.78464  9.628435
-CIMG_000004-T3   5.626869 2.319109e-04 114.45293  69.23315  42.60841 84.663596
+                      [,1]         [,2]      [,3]      [,4]      [,5]     [,6]
+CIMG2_000001-T1   2.000000 3.000000e+00  14.00000  21.00000  14.00000 18.00000
+CIMG2_000002-T1  38.000000 1.060000e+02   2.00000   4.00000   8.00000  9.00000
+CIMG2_000003-T1  48.000000 1.150000e+02 101.00000 160.00000 115.00000 72.00000
+CIMG2_000004-T1  22.954553 1.427960e+02  33.79294  83.49256  28.60744 32.71034
+CIMG2_000004-T2 128.868254 2.730561e+02  21.75976  40.25574  29.78382  9.62730
+CIMG2_000004-T3   5.641563 2.335638e-04 114.44730  69.25170  42.60873 84.66236
 using counts and average transcript lengths from tximport
 using 'avgTxLength' from assays(dds), correcting for library size
 -- note: fitType='parametric', but the dispersion trend was not well captured by the
@@ -118,14 +118,14 @@ using 'avgTxLength' from assays(dds), correcting for library size
 -- note: fitType='parametric', but the dispersion trend was not well captured by the
    function: y = a/x + b, and a local regression fit was automatically substituted.
    specify fitType='local' or 'mean' to avoid this message next time.
-               Mycelia.r1 Mycelia.r2 Spherule48h.r1 Spherule48H.r2
-CIMG_000001-T1   6.825446   6.809197       6.895164       6.907998
-CIMG_000002-T1   7.468436   7.654959       6.783340       6.792984
-CIMG_000003-T1   7.632353   7.727506       7.407109       7.478099
-               Spherule8D.r1 Spherule8D.r2
-CIMG_000001-T1      6.979879      7.040731
-CIMG_000002-T1      6.901896      6.919313
-CIMG_000003-T1      7.794550      7.545749
+                Mycelia.r1 Mycelia.r2 Spherule48h.r1 Spherule48H.r2
+CIMG2_000001-T1   6.894457   6.873335       6.975899       6.990234
+CIMG2_000002-T1   7.547934   7.729560       6.836857       6.851089
+CIMG2_000003-T1   7.707165   7.799684       7.488121       7.557215
+                Spherule8D.r1 Spherule8D.r2
+CIMG2_000001-T1      7.066446      7.128642
+CIMG2_000002-T1      6.983607      7.002558
+CIMG2_000003-T1      7.864735      7.623001
 Warning message:
 `as_data_frame()` is deprecated, use `as_tibble()` (but mind the new semantics).
 This warning is displayed once per session. 
