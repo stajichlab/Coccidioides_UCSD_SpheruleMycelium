@@ -15,8 +15,8 @@ txi.kallisto <- tximport(files, type = "kallisto", txOut = TRUE)
 head(txi.kallisto$counts)
 colnames(txi.kallisto$counts) <- exprnames
 colnames(txi.kallisto$abundance) <- exprnames
-write.csv(txi.kallisto$abundance,"reports/kallisto_single.TPM.csv")
-write.csv(txi.kallisto$counts,"reports/kallisto_single.counts.csv")
+write.csv(txi.kallisto$abundance,"reports/kallisto.TPM.csv")
+write.csv(txi.kallisto$counts,"reports/kallisto.counts.csv")
 
 # DEseq2 analyses
 treatment = factor (samples$Condition)
@@ -43,7 +43,7 @@ df <- bind_rows(
 
 colnames(df)[1:2] <- c("x", "y")
 
-pdf("plots/RNASeq_kallisto_single.pdf")
+pdf("plots/RNASeq_kallisto.pdf")
 ggplot(df, aes(x = x, y = y)) + geom_hex(bins = 80) +
   coord_fixed() + facet_grid( . ~ transformation)
 
@@ -88,3 +88,4 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
     xlab(paste0("PC1: ",percentVar[1],"% variance")) +
     ylab(paste0("PC2: ",percentVar[2],"% variance")) +
     coord_fixed()
+g
