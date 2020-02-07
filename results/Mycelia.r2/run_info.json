@@ -8,6 +8,6 @@
 	"p_unique": 21.1,
 	"kallisto_version": "0.46.0",
 	"index_version": 10,
-	"start_time": "Fri Feb  7 10:27:48 2020",
+	"start_time": "Fri Feb  7 10:47:25 2020",
 	"call": "kallisto quant -i Cimm_RS_v2.idx -o results/Mycelia.r2 -t 16 --bias fastq/MyceliaB_S67_L004_R1_001.fastq.gz fastq/MyceliaB_S67_L004_R2_001.fastq.gz"
 }

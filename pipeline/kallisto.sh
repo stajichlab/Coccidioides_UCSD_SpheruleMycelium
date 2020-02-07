@@ -16,6 +16,7 @@ mkdir -p $OUTDIR
 if [ ! -f $IDX ]; then
     gzip -dc data/$TX.gz > /tmp/$TX
     kallisto index -i $IDX /tmp/$TX
+    unlink /tmp/$TX
 fi
 
 N=${SLURM_ARRAY_TASK_ID}

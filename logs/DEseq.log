@@ -1,0 +1,131 @@
+Loading required package: S4Vectors
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: 'BiocGenerics'
+
+The following objects are masked from 'package:parallel':
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from 'package:stats':
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from 'package:base':
+
+    Filter, Find, Map, Position, Reduce, anyDuplicated, append,
+    as.data.frame, basename, cbind, colnames, dirname, do.call,
+    duplicated, eval, evalq, get, grep, grepl, intersect, is.unsorted,
+    lapply, mapply, match, mget, order, paste, pmax, pmax.int, pmin,
+    pmin.int, rank, rbind, rownames, sapply, setdiff, sort, table,
+    tapply, union, unique, unsplit, which, which.max, which.min
+
+
+Attaching package: 'S4Vectors'
+
+The following object is masked from 'package:base':
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomicRanges
+Loading required package: GenomeInfoDb
+Loading required package: SummarizedExperiment
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: DelayedArray
+Loading required package: matrixStats
+
+Attaching package: 'matrixStats'
+
+The following objects are masked from 'package:Biobase':
+
+    anyMissing, rowMedians
+
+Loading required package: BiocParallel
+
+Attaching package: 'DelayedArray'
+
+The following objects are masked from 'package:matrixStats':
+
+    colMaxs, colMins, colRanges, rowMaxs, rowMins, rowRanges
+
+The following objects are masked from 'package:base':
+
+    aperm, apply, rowsum
+
+
+Attaching package: 'dplyr'
+
+The following object is masked from 'package:matrixStats':
+
+    count
+
+The following object is masked from 'package:Biobase':
+
+    combine
+
+The following objects are masked from 'package:GenomicRanges':
+
+    intersect, setdiff, union
+
+The following object is masked from 'package:GenomeInfoDb':
+
+    intersect
+
+The following objects are masked from 'package:IRanges':
+
+    collapse, desc, intersect, setdiff, slice, union
+
+The following objects are masked from 'package:S4Vectors':
+
+    first, intersect, rename, setdiff, setequal, union
+
+The following objects are masked from 'package:BiocGenerics':
+
+    combine, intersect, setdiff, union
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+1 2 3 4 5 6 
+                     [,1]         [,2]      [,3]      [,4]      [,5]      [,6]
+CIMG_000001-T1   2.000000 3.000000e+00  14.00000  21.00000  14.00000 18.000000
+CIMG_000002-T1  38.000000 1.060000e+02   2.00000   4.00000   8.00000  9.000000
+CIMG_000003-T1  48.000000 1.150000e+02 101.00000 160.00000 115.00000 72.000000
+CIMG_000004-T1  22.971059 1.428009e+02  33.79362  83.50121  28.60695 32.707970
+CIMG_000004-T2 128.871767 2.730426e+02  21.75345  40.26564  29.78464  9.628435
+CIMG_000004-T3   5.626869 2.319109e-04 114.45293  69.23315  42.60841 84.663596
+using counts and average transcript lengths from tximport
+using 'avgTxLength' from assays(dds), correcting for library size
+-- note: fitType='parametric', but the dispersion trend was not well captured by the
+   function: y = a/x + b, and a local regression fit was automatically substituted.
+   specify fitType='local' or 'mean' to avoid this message next time.
+-- note: fitType='parametric', but the dispersion trend was not well captured by the
+   function: y = a/x + b, and a local regression fit was automatically substituted.
+   specify fitType='local' or 'mean' to avoid this message next time.
+               Mycelia.r1 Mycelia.r2 Spherule48h.r1 Spherule48H.r2
+CIMG_000001-T1   6.825446   6.809197       6.895164       6.907998
+CIMG_000002-T1   7.468436   7.654959       6.783340       6.792984
+CIMG_000003-T1   7.632353   7.727506       7.407109       7.478099
+               Spherule8D.r1 Spherule8D.r2
+CIMG_000001-T1      6.979879      7.040731
+CIMG_000002-T1      6.901896      6.919313
+CIMG_000003-T1      7.794550      7.545749
+Warning message:
+`as_data_frame()` is deprecated, use `as_tibble()` (but mind the new semantics).
+This warning is displayed once per session. 
