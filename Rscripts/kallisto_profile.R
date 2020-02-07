@@ -32,8 +32,8 @@ dds <- dds[ rowSums(counts(dds)) > 1, ]
 
 dds <- estimateSizeFactors(dds)
 vsd <- vst(dds, blind=FALSE)
-#rld <- rlog(dds, blind=FALSE)
-head(assay(vsd), 3)
+rld <- rlog(dds, blind=FALSE)
+#head(assay(vsd), 3)
 
 dds <- DESeq(dds,fitType='mean')
 
