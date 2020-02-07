@@ -10,7 +10,7 @@
 [quant] finding pseudoalignments for the reads ... done
 [quant] learning parameters for sequence specific bias
 [quant] processed 16,906,897 reads, 6,139,733 reads pseudoaligned
-[quant] estimated average fragment length: 234.154
+[quant] estimated average fragment length: 234.705
 [   em] quantifying the abundances ... done
-[   em] the Expectation-Maximization algorithm ran for 663 rounds
+[   em] the Expectation-Maximization algorithm ran for 665 rounds
 

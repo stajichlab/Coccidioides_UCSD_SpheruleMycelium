@@ -129,3 +129,6 @@ CIMG2_000003-T1      7.864735      7.623001
 Warning message:
 `as_data_frame()` is deprecated, use `as_tibble()` (but mind the new semantics).
 This warning is displayed once per session. 
+Error in results(dds, contrast = c("condition", "Mycelia", "Spherule48H")) : 
+  couldn't find results. you should first run DESeq()
+Execution halted

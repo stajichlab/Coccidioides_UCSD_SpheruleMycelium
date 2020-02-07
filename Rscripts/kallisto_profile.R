@@ -32,14 +32,16 @@ dds <- dds[ rowSums(counts(dds)) > 1, ]
 
 dds <- estimateSizeFactors(dds)
 vsd <- vst(dds, blind=FALSE)
-rld <- rlog(dds, blind=FALSE)
+#rld <- rlog(dds, blind=FALSE)
 head(assay(vsd), 3)
 
+dds <- DESeq(dds,fitType='mean')
+
 df <- bind_rows(
-  as_data_frame(log2(counts(dds, normalized=TRUE)[, 1:2]+1)) %>%
+  as_tibble(log2(counts(dds, normalized=TRUE)[, 1:2]+1)) %>%
          mutate(transformation = "log2(x + 1)"),
-  as_data_frame(assay(rld)[, 1:2]) %>% mutate(transformation = "rlog"),
-  as_data_frame(assay(vsd)[, 1:2]) %>% mutate(transformation = "vst"))
+  as_tibble(assay(rld)[, 1:2]) %>% mutate(transformation = "rlog"),
+  as_tibble(assay(vsd)[, 1:2]) %>% mutate(transformation = "vst"))
 
 colnames(df)[1:2] <- c("x", "y")
 
@@ -88,4 +90,28 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
     xlab(paste0("PC1: ",percentVar[1],"% variance")) +
     ylab(paste0("PC2: ",percentVar[2],"% variance")) +
     coord_fixed()
-g
+
+## res <- results(dds, contrast=c("condition","Mycelia","Spherule48H"))
+## summary(res)
+## plotMA(res,main="Mycelium vs Spherule48H")
+## res <- subset(res,res$padj<0.05)
+## res <- res[order(res$pvalue ),]
+## summary(res)
+## write.csv(res,"reports/kallisto.DESeq_Mycelium_Spherule48H.csv")
+
+
+## res <- results(dds, contrast=c("condition","Mycelia","Spherule8D"))
+## summary(res)
+## plotMA(res,main="Mycelium vs Spherule8D")
+## res <- subset(res,res$padj<0.05)
+## res <- res[order(res$pvalue ),]
+## summary(res)
+## write.csv(res,"reports/kallisto.DESeq_Mycelium_Spherule8D.csv")
+
+## res <- results(dds, contrast=c("condition","Spherule48H","Spherule8D"))
+## summary(res)
+## plotMA(res,main="Spherule48H vs Spherule8D")
+## res <- subset(res,res$padj<0.05)
+## res <- res[order(res$pvalue ),]
+## summary(res)
+## write.csv(res,"reports/kallisto.DESeq_Spherule48H_Spherule8D.csv")
