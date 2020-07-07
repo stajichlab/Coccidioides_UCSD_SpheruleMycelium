@@ -26,9 +26,9 @@ rownames(sampleTable) = exprnames
 
 dds <- DESeqDataSetFromTximport(txi.kallisto,sampleTable,design=~ condition)
 
-#nrow(dds)
+nrow(dds)
 dds <- dds[ rowSums(counts(dds)) > 1, ]
-#nrow(dds)
+nrow(dds)
 
 dds <- estimateSizeFactors(dds)
 vsd <- vst(dds, blind=FALSE)
@@ -37,7 +37,8 @@ rld <- rlog(dds, blind=FALSE)
 
 dds <- DESeq(dds,fitType='mean')
 resultsNames(dds)
-dds <- lfcShrink(dds,coef="condition_Spherule48H_vs_Mycelia",type="apeglm")
+
+#dds <- lfcShrink(dds,coef="condition_Spherule48H_vs_Mycelia",type="apeglm")
 #res <- results(dds, contrast=c("condition","Mycelia","Spherule48H"))
 #res <- results(dds, name="condition_Spherule48h_vs_Mycelia")
 res <- results(dds,filterFun=ihw)

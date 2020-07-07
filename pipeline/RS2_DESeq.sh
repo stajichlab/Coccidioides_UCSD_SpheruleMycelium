@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --nodes 1 --ntasks 1 --out logs/DEseq.log --mem 4G 
+#SBATCH --nodes 1 --ntasks 1 --out logs/DEseq_RS2.log --mem 4G 
 #SBATCH --time 2:00:00 -p short
 
 module unload R
