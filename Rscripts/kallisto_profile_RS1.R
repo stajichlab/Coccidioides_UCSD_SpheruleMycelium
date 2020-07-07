@@ -6,17 +6,17 @@ library(magrittr)
 library(Biobase)
 library(pheatmap)
 library(RColorBrewer)
-
+library(IHW)
 samples <- read.csv("samples.csv",header=TRUE)
 exprnames <- do.call(paste,c(samples[c("Condition","Replicate")],sep="."))
 exprnames <- sub(".([123])$",".r\\1",exprnames,perl=TRUE)
-files <- file.path("results",exprnames,"abundance.h5")
+files <- file.path("results","RS1",exprnames,"abundance.h5")
 txi.kallisto <- tximport(files, type = "kallisto", txOut = TRUE)
 head(txi.kallisto$counts)
 colnames(txi.kallisto$counts) <- exprnames
 colnames(txi.kallisto$abundance) <- exprnames
-write.csv(txi.kallisto$abundance,"reports/kallisto.TPM.csv")
-write.csv(txi.kallisto$counts,"reports/kallisto.counts.csv")
+write.csv(txi.kallisto$abundance,"reports/RS1_kallisto.TPM.csv")
+write.csv(txi.kallisto$counts,"reports/RS1_kallisto.counts.csv")
 
 # DEseq2 analyses
 treatment = factor (samples$Condition)
@@ -24,7 +24,7 @@ treatment = factor (samples$Condition)
 sampleTable <- data.frame(condition = treatment)
 rownames(sampleTable) = exprnames
 
-dds <- DESeqDataSetFromTximport(txi.kallisto,sampleTable,~ condition)
+dds <- DESeqDataSetFromTximport(txi.kallisto,sampleTable,design=~ condition)
 
 #nrow(dds)
 dds <- dds[ rowSums(counts(dds)) > 1, ]
@@ -36,6 +36,16 @@ rld <- rlog(dds, blind=FALSE)
 #head(assay(vsd), 3)
 
 dds <- DESeq(dds,fitType='mean')
+resultsNames(dds)
+dds <- lfcShrink(dds,coef="condition_Spherule48H_vs_Mycelia",type="apeglm")
+#res <- results(dds, contrast=c("condition","Mycelia","Spherule48H"))
+#res <- results(dds, name="condition_Spherule48h_vs_Mycelia")
+res <- results(dds,filterFun=ihw)
+summary(res)
+res <- subset(res,res$padj<0.05)
+res <- res[order(res$pvalue ),]
+summary(res)
+
 
 df <- bind_rows(
   as_tibble(log2(counts(dds, normalized=TRUE)[, 1:2]+1)) %>%
@@ -45,7 +55,7 @@ df <- bind_rows(
 
 colnames(df)[1:2] <- c("x", "y")
 
-pdf("plots/RNASeq_kallisto.pdf")
+pdf("plots/RS1_RNASeq_kallisto.pdf")
 ggplot(df, aes(x = x, y = y)) + geom_hex(bins = 80) +
   coord_fixed() + facet_grid( . ~ transformation)
 
