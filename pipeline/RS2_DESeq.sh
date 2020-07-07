@@ -3,5 +3,5 @@
 #SBATCH --time 2:00:00 -p short
 
 mkdir -p plots reports
-Rscript Rscripts/kallisto_profile.R
+Rscript Rscripts/kallisto_profile_RS2.R
 

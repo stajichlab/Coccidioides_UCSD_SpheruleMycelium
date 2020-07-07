@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#SBATCH -p short --mem 24gb -N 1 -n 16  --out logs/kallisto.%a.log
+#SBATCH -p short --mem 24gb -N 1 -n 16  --out logs/kallisto_RS2.%a.log
 
 CPU=1
 if [ $SLURM_CPUS_ON_NODE ]; then
@@ -8,7 +8,7 @@ fi
 
 module load kallisto
 INDIR=fastq
-OUTDIR=results
+OUTDIR=results/RS2
 IDX=Cimm_RS_v2.idx
 TX=Coccidioides_immitis_RS.mrna-transcripts.fa
 SAMPLEFILE=samples.csv
