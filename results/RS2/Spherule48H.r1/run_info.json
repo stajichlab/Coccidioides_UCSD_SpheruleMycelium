@@ -1,0 +1,13 @@
+{
+	"n_targets": 9861,
+	"n_bootstraps": 0,
+	"n_processed": 16906897,
+	"n_pseudoaligned": 6139733,
+	"n_unique": 5408469,
+	"p_pseudoaligned": 36.3,
+	"p_unique": 32.0,
+	"kallisto_version": "0.46.2",
+	"index_version": 10,
+	"start_time": "Tue Jul  7 15:28:46 2020",
+	"call": "kallisto quant -i Cimm_RS_v2.idx -o results/RS2/Spherule48H.r1 -t 16 --bias fastq/Spherule48hA_S68_L004_R1_001.fastq.gz fastq/Spherule48hA_S68_L004_R2_001.fastq.gz"
+}

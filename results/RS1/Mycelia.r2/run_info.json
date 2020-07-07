@@ -1,0 +1,13 @@
+{
+	"n_targets": 10058,
+	"n_bootstraps": 0,
+	"n_processed": 19364661,
+	"n_pseudoaligned": 13524632,
+	"n_unique": 4947316,
+	"p_pseudoaligned": 69.8,
+	"p_unique": 25.5,
+	"kallisto_version": "0.46.2",
+	"index_version": 10,
+	"start_time": "Tue Jul  7 15:28:46 2020",
+	"call": "kallisto quant -i Cimm_RS_v1.idx -o results/RS1/Mycelia.r2 -t 16 --bias fastq/MyceliaB_S67_L004_R1_001.fastq.gz fastq/MyceliaB_S67_L004_R2_001.fastq.gz"
+}

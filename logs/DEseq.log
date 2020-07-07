@@ -102,14 +102,21 @@ The following objects are masked from 'package:base':
 
     intersect, setdiff, setequal, union
 
+
+Attaching package: 'IHW'
+
+The following object is masked from 'package:ggplot2':
+
+    alpha
+
 1 2 3 4 5 6 
-                      [,1]         [,2]      [,3]      [,4]      [,5]     [,6]
-CIMG2_000001-T1   2.000000 3.000000e+00  14.00000  21.00000  14.00000 18.00000
-CIMG2_000002-T1  38.000000 1.060000e+02   2.00000   4.00000   8.00000  9.00000
-CIMG2_000003-T1  48.000000 1.150000e+02 101.00000 160.00000 115.00000 72.00000
-CIMG2_000004-T1  22.954553 1.427960e+02  33.79820  83.49256  28.60744 32.71034
-CIMG2_000004-T2 128.868254 2.730561e+02  21.75932  40.25574  29.78382  9.62730
-CIMG2_000004-T3   5.641563 2.335638e-04 114.44248  69.25170  42.60873 84.66236
+                      [,1]         [,2]      [,3]      [,4]      [,5]      [,6]
+CIMG2_000001-T1   2.000000 3.000000e+00  14.00000  21.00000  14.00000 18.000000
+CIMG2_000002-T1  38.000000 1.060000e+02   2.00000   4.00000   8.00000  9.000000
+CIMG2_000003-T1  48.000000 1.150000e+02 101.00000 160.00000 115.00000 72.000000
+CIMG2_000004-T1  22.980680 1.429629e+02  33.79324  83.49351  28.60726 32.710330
+CIMG2_000004-T2 128.847953 2.729010e+02  21.75963  40.25580  29.78250  9.627255
+CIMG2_000004-T3   5.653842 2.119189e-04 114.44713  69.25070  42.61023 84.662415
 using counts and average transcript lengths from tximport
 using 'avgTxLength' from assays(dds), correcting for library size
 -- note: fitType='parametric', but the dispersion trend was not well captured by the
@@ -124,3 +131,13 @@ gene-wise dispersion estimates
 mean-dispersion relationship
 final dispersion estimates
 fitting model and testing
+[1] "Intercept"                        "condition_Spherule48H_vs_Mycelia"
+[3] "condition_Spherule8D_vs_Mycelia" 
+using 'apeglm' for LFC shrinkage. If used in published research, please cite:
+    Zhu, A., Ibrahim, J.G., Love, M.I. (2018) Heavy-tailed prior distributions for
+    sequence count data: removing the noise and preserving large differences.
+    Bioinformatics. https://doi.org/10.1093/bioinformatics/bty895
+Error in results(dds, filterFun = ihw) : 
+  is(object, "DESeqDataSet") is not TRUE
+Calls: results -> stopifnot
+Execution halted
